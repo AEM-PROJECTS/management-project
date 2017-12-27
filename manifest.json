@@ -1,0 +1,38 @@
+{
+    "name": "Your Extension Name",
+    "description": "Your Extension Description",
+    "version": "0.1",
+    "manifest_version": 2,
+    "background": {
+        "scripts": ["assets/js/jquery-3.2.1.min.js","background.js"],
+        "persistent": false
+    },
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_title": "Blast the typo!",
+        "default_popup": "examples/dashboard.html"
+    },
+
+    "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "contextMenus",        
+    "http://*/*", 
+    "https://*/*"
+  ],
+      "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+
+      "content_scripts": 
+    [
+        {
+            "matches":["http://*/*"],
+            "js":["assets/js/jquery-3.2.1.min.js"],
+            "run_at": "document_end"
+        }
+    ],
+
+    "browser_action": {
+         "title": "Your Browser Action Name"
+    }
+}
