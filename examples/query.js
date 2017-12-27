@@ -1,9 +1,11 @@
 var data = null;
 
 $().ready(function(){
-  $.getJSON("data.json", function(json) {
-    data = json.query;
-  });
+      // Read it using the storage API
+    chrome.storage.sync.get(['json'], function(items) {
+      console.log('Settings retrieved', items.json);
+      data = JSON.parse(items.json).query;
+    });
 });
 
 document.getElementById("view_components").addEventListener("click", components);

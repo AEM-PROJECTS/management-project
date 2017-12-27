@@ -1,10 +1,15 @@
-        $().ready(function(){
-           $.getJSON("data.json", function(json) {
-                $.each(json.team,function(index, val){
+      var data = null;
+
+    $().ready(function(){
+                chrome.storage.sync.get(['json'], function(items) {
+      console.log('Settings retrieved', items.json);
+      data = JSON.parse(items.json);
+       $.each(data.team,function(index, val){
                     issues_me(val.url+val.tables[0].query+val.api_key);
                     issues_team(val.url+val.tables[1].query+val.api_key);
                 });
-            });
+    });
+
         });
 
 
