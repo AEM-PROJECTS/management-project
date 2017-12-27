@@ -1,5 +1,5 @@
 # management-project
-
+```json
 {
     "adminconsole":  [
         {
@@ -61,3 +61,4 @@
     ]
 
 }
+```
