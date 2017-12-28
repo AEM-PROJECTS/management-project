@@ -21,7 +21,7 @@
 {
     "team": [
         {
-            "name":"enel",
+            "name":"my team",
             "url":"https://SERVER_HERE/redmine",
             "api_key":"&api_key=VALUE_HERE",
             "tables":[
