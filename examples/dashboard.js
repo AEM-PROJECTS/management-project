@@ -1,8 +1,4 @@
-
 document.getElementById("submit").addEventListener("click", loadData);
-
-
-
 
 function loadData(){
 

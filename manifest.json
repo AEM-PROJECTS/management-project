@@ -1,6 +1,6 @@
 {
-    "name": "Your Extension Name",
-    "description": "Your Extension Description",
+    "name": "AEM - Managment console",
+    "description": "AEM - Managment console",
     "version": "0.1",
     "manifest_version": 2,
     "background": {
@@ -27,6 +27,7 @@
     [
         {
             "matches":["http://*/*"],
+            "all_frames": true,
             "js":["assets/js/jquery-3.2.1.min.js"],
             "run_at": "document_end"
         }
