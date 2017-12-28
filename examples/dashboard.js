@@ -6,6 +6,13 @@ $().ready(function(){
         data = JSON.parse(items.json);
         extractData(data);
     });
+
+   /* chrome.runtime.onMessage.addListener(
+        function(request, sender, sendResponse) {
+            if (request.type == "sling")
+                alert("2"+JSON.stringify(data));
+              //sendResponse({true: "true"});
+        });*/
 });
 
 
