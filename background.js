@@ -4,7 +4,7 @@ function isEmpty(val){
 
 
 chrome.contextMenus.removeAll();
-chrome.contextMenus.create({ "id":"AA","title": "Open page/Component in crx", "contexts":["all"]});
+chrome.contextMenus.create({ "id":"CRX","title": "Open page/Component in crx", "contexts":["all"]});
 
 //chrome.contextMenus.onClicked.addListener(openPageCrx);
 chrome.contextMenus.onClicked.addListener(openCrx);
