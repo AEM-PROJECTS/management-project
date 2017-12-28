@@ -1,4 +1,6 @@
 # management-project
+
+## Admin section
 ```json
 {
     "adminconsole":  [
@@ -8,32 +10,15 @@
             "subtitle":"Go to link",
             "url":"http://localhost:4502/sites.html/content",
             "icon":"info_outline"
-        },
-        {
-            "section":"Content",
-            "name":"Asets",
-            "url":"http://localhost:4502/assets.html/content/dam",
-            "icon":"store"
-        },
-        {
-            "section":"Admin",
-            "name":"CRXDE Lite",
-            "url":"http://localhost:4502/crx/de/index.jsp",
-            "icon":"info_outline"
-        },
-        {
-            "section":"Admin",
-            "name":"Replication",
-            "url":"http://localhost:4502/etc/replication.html",
-            "icon":""
-        },
-        {
-            "section":"Debug",
-            "name":"Querydebug",
-            "url":"http://localhost:4502/libs/cq/search/content/querydebug.html",
-            "icon":""
         }
-    ],
+    ]
+}
+```
+
+
+## Team section
+```json
+{
     "team": [
         {
             "name":"enel",
@@ -48,9 +33,13 @@
                 }
             ]
         }
-    ],
-    "logs":
-        [],
+    ]
+}
+```   
+   
+## Query section
+```json 
+{
     "query": [
         {
              "url":"http://localhost:4502/bin/querybuilder.json?path=/apps&type=cq:Component&p.limit=-1&orderby:path"
@@ -59,6 +48,5 @@
             "url":"http://localhost:4502/bin/querybuilder.json?path=/apps/PROJECT_HERE/templates&type=cq:Template&p.limit=-1&orderby:path"
         }
     ]
-
 }
 ```
