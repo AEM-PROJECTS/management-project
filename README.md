@@ -53,8 +53,20 @@
 ```
 ![Image of Query](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/query.png)
 
-## Context_menus
+
+## Context menu
+If you select a text, the plugin detect the node selected, find the parent node with a cq tag(the nearly component in the DOM) and open a new tab with the selected component or the page in the CRX when you don't selct nothing in the page.
+
+
+STEP1.
+
+Select the text that i wish need inspect the componente in the crx and use the plugin.
 ![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/context_menus_1.png)
+
+
+STEP 2.
+
+Open the CRX with the exacto or nearly component in the DOM.
 ![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/context_menus_2.png)
 
 
