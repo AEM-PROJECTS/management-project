@@ -56,3 +56,6 @@
 ## Context_menus
 ![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/context_menus_1.png)
 ![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/context_menus_2.png)
+
+
+[Example file data.json](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/data.json)
