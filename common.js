@@ -1,11 +1,7 @@
-var element = $('h2:contains("'+txt+'")');
-	if( element == null)
-		element = $('p:contains("'+txt+'")');
-	if( element == null)
-		element = $('div:contains("'+txt+'")');
-	if( element == null)
-		element = $('li:contains("'+txt+'")');
 
+var url = $($(window.getSelection().focusNode.parentElement).closest('.parbase').parent().find("cq")[0]).data("path");
 
-var url = $(element).closest('.parbase').parent().find("cq").data("path");
-window.open("http://localhost:4502/crx/de/index.jsp#"+ encodeURI(url).replace(':','%3A'), "_blank");
+if(url== undefined)
+	window.open(redirect, "_blank");
+else
+	window.open("http://localhost:4502/crx/de/index.jsp#"+ encodeURI(url).replace(':','%3A'), "_blank");

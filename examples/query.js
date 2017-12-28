@@ -2,7 +2,7 @@ var data = null;
 
 $().ready(function(){
       // Read it using the storage API
-    chrome.storage.sync.get(['json'], function(items) {
+    chrome.storage.sync.get('json', function(items) {
       console.log('Settings retrieved', items.json);
       data = JSON.parse(items.json).query;
     });

@@ -1,38 +1,40 @@
+function isEmpty(val){
+    return (val === undefined || val == null || val.length <= 0) ? true : false;
+}
+
+
 chrome.contextMenus.removeAll();
-chrome.contextMenus.create({ "id":"AA","title": "Open page in crx", "contexts":["all"]});
-chrome.contextMenus.create({ "id":"AA","title": "Open Component in crx", "contexts":["all"]});
+chrome.contextMenus.create({ "id":"AA","title": "Open page/Component in crx", "contexts":["all"]});
 
 //chrome.contextMenus.onClicked.addListener(openPageCrx);
-chrome.contextMenus.onClicked.addListener(openComponentCrx);
+chrome.contextMenus.onClicked.addListener(openCrx);
+
+function openCrx(info, tab){
+    if(!isEmpty(info.selectionText)){
+        openComponentCrx(info, tab);
+    }else{
+      openPageCrx(info, tab);  
+    }
+}
 
 function openPageCrx(info, tab){
-   alert(tab.id+"------------");
-     var url = new URL(tab.url);
-     var domain = url.pathname;
-     var createProperties = {url: "http://localhost:4502/crx/de/index.jsp#"+ encodeURI(domain).replace('\.html','')};
-    chrome.tabs.create(createProperties);
+    var url = new URL(tab.url);
+    var domain = url.pathname;
+    var createProperties = {url: "http://localhost:4502/crx/de/index.jsp#"+ encodeURI(domain).replace('\.html','')};
+        chrome.tabs.create(createProperties);
 }
 
 function openComponentCrx(info, tab){
-   alert(info.selectionText+"AAAA");
-     var url = new URL(tab.url);
-     var domain = url.pathname;
-     
+    var url = new URL(tab.url);
+    var domain = url.pathname;
 
-      chrome.storage.sync.set({'text': info.selectionText}, function() {
-            console.log('Settings saved');
+    chrome.tabs.executeScript(tab.id, { 
+        code: 'var redirect=\"'+"http://localhost:4502/crx/de/index.jsp#"+ encodeURI(domain).replace('\.html','')+'\"; var txt ="' + info.selectionText + '";'
+    },function(){
+        chrome.tabs.executeScript(tab.id, { 
+            file: "common.js" 
         });
-
-      chrome.tabs.executeScript(tab.id, { 
-            code: 'var txt ="' + info.selectionText + '";'
-        },function(){
-            chrome.tabs.executeScript(tab.id, { 
-                file: "common.js" 
-            });
-        });
-
-
-          
+    });       
 }
 
 
