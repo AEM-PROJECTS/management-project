@@ -1,37 +1,55 @@
 {
-    "adminconsole":  [
-        {
-            "section":"Admin",
-            "name":"Sites",
-            "subtitle":"Go to link",
-            "url":"/sites.html/content",
-            "icon":"info_outline"
-        },
-        {
-            "section":"Content",
-            "name":"Asets",
-            "url":"/assets.html/content/dam",
-            "icon":"store"
-        },
-        {
-            "section":"Admin",
-            "name":"CRXDE Lite",
-            "url":"/crx/de/index.jsp",
-            "icon":"info_outline"
-        },
-        {
-            "section":"Admin",
-            "name":"Replication",
-            "url":"/etc/replication.html",
-            "icon":""
-        },
-        {
-            "section":"Debug",
-            "name":"Querydebug",
-            "url":"/libs/cq/search/content/querydebug.html",
-            "icon":""
-        }
-    ],
+    "adminconsole":  {
+
+        "enviroments" : [
+            {
+                "name":"localhost",
+                "url": "http://localhost:4502",
+                "color": "red",
+                "author":"http://localhost:4502",
+                "publish": [
+                    {
+                        "url":"http://localhost:4503"
+                    }
+                ],
+            }
+        ],
+        "links" : [
+            {
+                "section":"Admin",
+                "name":"Sites",
+                "subtitle":"Go to link",
+                "url":"/sites.html/content",
+                "icon":"info_outline"
+            },
+            {
+                "section":"Content",
+                "name":"Asets",
+                "url":"/assets.html/content/dam",
+                "icon":"store"
+            },
+            {
+                "section":"Admin",
+                "name":"CRXDE Lite",
+                "url":"/crx/de/index.jsp",
+                "icon":"info_outline"
+            },
+            {
+                "section":"Admin",
+                "name":"Replication",
+                "url":"/etc/replication.html",
+                "icon":""
+            },
+            {
+                "section":"Debug",
+                "name":"Querydebug",
+                "url":"/libs/cq/search/content/querydebug.html",
+                "icon":""
+            }
+        ]
+
+
+    },
     "team": [
         {
             "name":"my team",

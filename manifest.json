@@ -7,19 +7,42 @@
         "scripts": ["assets/js/jquery-3.2.1.min.js","background.js"],
         "persistent": false
     },
+
     "browser_action": {
-        "default_icon": "icon.png",
-        "default_title": "Blast the typo!",
+        "default_title": "AEM - Managment console",
         "default_popup": "examples/dashboard.html"
+    },
+    "commands": {
+            "edit": {
+                "suggested_key": {
+                    "default": "Ctrl+Shift+L",
+                    "mac": "MacCtrl+Shift+L"
+                },
+                "description": "Send a 'toggle-feature' event to the extension"
+            },
+            "publish": {
+                "suggested_key": {
+                    "default": "Ctrl+Shift+K",
+                    "mac": "MacCtrl+Shift+K"
+                },
+                "description": "Send a 'toggle-feature' event to the extension"
+            },
+            "_execute_browser_action": {
+                "suggested_key": {
+                    "default": "Ctrl+Shift+F",
+                    "mac": "MacCtrl+Shift+F"
+                }
+            }
     },
 
     "permissions": [
     "activeTab",
     "storage",
     "tabs",
+    "notifications",
     "contextMenus",        
-    "http://*/*", 
-    "https://*/*"
+        "http://*/*",
+        "https://*/*"
   ],
       "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
 
@@ -32,8 +55,5 @@
             "run_at": "document_end"
         }
     ],
-
-    "browser_action": {
-         "title": "Your Browser Action Name"
-    }
+    "web_accessible_resources": ["modal.html","modal.js"]
 }

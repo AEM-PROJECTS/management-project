@@ -1,8 +1,22 @@
 var SLING_INFO = 'http://localhost:4502/system/console/status-slingsettings.json',
 SYSTEM_INFO             = 'http://localhost:4502/system/console/status-System%20Properties.json';
 
-  getInfo(SLING_INFO);
- getInfo2(SYSTEM_INFO);
+    var origin = window.location.href;
+    var url = origin.split('/')[origin.split('/').length - 1];
+
+$().ready(function(){
+         setTimeout(function(){ 
+       chrome.storage.sync.get(['last_page','last_page_flag'], function(items) {
+        if(items.last_page_flag == 'false' && items.last_page && (url != items.last_page)){
+          window.location.href = origin.replace(url, items.last_page);
+        }
+         chrome.storage.sync.set({'last_page': 'monitoring.html', 'last_page_flag':'true'}, function() { });
+       });
+    }, 1000);
+});
+
+getInfo(SLING_INFO);
+getInfo2(SYSTEM_INFO);
 
 
 
@@ -51,7 +65,7 @@ function getInfo2(url, callback, preventSuccessMessage) {
 
             data = JSON.parse(responseText);
             var array_ =  convertSlingArrayToObject(data);
-            var html = "<pre>";
+            var html = "<b>System info</b><pre>";
             html += "<b>java.runtime.name: </b>"+ array_["java.runtime.name"]+"<br>";
             html += "<b>java.runtime.version: </b>"+array_["java.runtime.version"]+"<br>";
             html +=  "<b>java.vendor: </b>"+array_["java.vendor"]+"<br>";
@@ -104,7 +118,7 @@ function getInfo2(url, callback, preventSuccessMessage) {
 
             data = JSON.parse(responseText);
             var array_ =  convertSlingArrayToObject(data);
-            var html = "<pre>";
+            var html = "<b>Instance info</b><pre>";
             html += "<b>Sling ID: </b>"+ array_["Sling ID"]+"<br>";
             html += "<b>Sling Name: </b>"+array_["Sling Name"]+"<br>";
             html +=  "<b>Sling Home: </b>"+array_["Sling Home"]+"<br>";

@@ -1,4 +1,5 @@
 $().ready(function(){
+    chrome.storage.sync.set({'last_page': 'curl'}, function() { });
     /*var xhr = new XMLHttpRequest();
     var params = "cmd=activate&path=/content/enel-it/it";
     xhr.open('POST', "http://localhost:4502/libs/wcm/core/content/reference.json", false, "admin", "admin");

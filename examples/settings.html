@@ -6,7 +6,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
     <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Monitoring</title>
+    <title>Admin Panel</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <!-- Bootstrap core CSS     -->
@@ -23,7 +23,7 @@
 <body id="body">
 
     <div class="wrapper">
-        <div class="sidebar" data-color="green" data-image="../assets/img/sidebar-1.jpg">
+        <div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg">
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -55,8 +55,8 @@
                         </a>
                     </li>
                 
-                    <li class="active"> 
-                        <a href="">
+                    <li>
+                        <a href="./monitoring.html">
                             <i class="material-icons">Instance</i>
                             <p>Instance</p>
                         </a>
@@ -67,8 +67,8 @@
                             <p>Curl Commands</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="./settings.html">
+                    <li class="active">
+                        <a href="#">
                             <i class="material-icons">Set</i>
                             <p>Settings</p>
                         </a>
@@ -86,16 +86,67 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#"> Instance console </a>
                     </div>
-                   
                 </div>
             </nav>
             <div class="content">
-            <a href="http://localhost:4502/system/console/slinglog/" target="_blank">View Logs console</a><br>
-            <a href="http://localhost:4502/system/console/slinglog/slinglog/tailer.txt?tail=200&grep=*&name=%2Flogs%2Ferror.log" target="_blank">View Error Log / Last 200 lines</a><br>
-            <a href="http://localhost:4502/libs/granite/operations/content/monitoring/page.html" target="_blank">Monitoring Page</a>
-            <hr>
+               
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Set your plugin </h4>
+                                    <p class="category">Complete...</p>
+                                </div>
+                                <div class="card-content">
+                                    
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="col-md-7 form-group label-floating is-empty">
+                                                    <label class="control-label">URL to json collection</label>
+                                                    <input id="importapipath" type="text" class="form-control">
+                                                <span class="material-input"></span></div>
+                                                 <div class="col-md-3">
+                                                <button id="importapi" class="btn btn-primary" style="margin:27px;">Import From url</button>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="col-md-7 form-group ">
+                                                    <label class="control-label">Click here to load json collection from file system</label>
+                                                    <input id="myFile" type="file" class="form-control">
+                                                <span class="material-input"></span></div>
+                                                <div class="col-md-3">
+                                                <button id="submit" class="btn btn-primary" style="margin:27px;">Confirm LOAD fs</button>
+                                                </div>
+                                        </div>
+                                            
+                                        </div>
+
+                                        <div class="clearfix"></div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-profile">
+                               
+                                <div class="content">
+                                    <h6 class="category text-gray">AEM - Managment console</h6>
+                                    <h4 class="card-title">Juan FGR</h4>
+                                    <p class="card-content">
+                                        Read more in Github...
+                                    </p>
+                                    <a href="https://github.com/AEM-PROJECTS/management-project" target="_blank" class="btn btn-primary btn-round">Github</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <footer class="footer">
                 <div class="container-fluid">
@@ -133,5 +184,5 @@
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="../assets/js/demo.js"></script>
 
-<script src="monitoring.js"></script>
+<script src="settings.js"></script>
 </html>

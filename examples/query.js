@@ -1,16 +1,50 @@
 var data = null;
+var origin_query = null;
+var _url_val = null;
+
+var $ = jQuery.noConflict();
+    var origin = window.location.href;
+    var url = origin.split('/')[origin.split('/').length - 1];
 
 $().ready(function(){
+         setTimeout(function(){ 
+       chrome.storage.sync.get(['last_page','last_page_flag'], function(items) {
+        if(items.last_page_flag == 'false' && items.last_page && (url != items.last_page)){
+          window.location.href = origin.replace(url, items.last_page);
+        }
+         chrome.storage.sync.set({'last_page': 'query.html', 'last_page_flag':'true'}, function() { });
+       });
+    }, 1000);
+
       // Read it using the storage API
     chrome.storage.sync.get('json', function(items) {
       console.log('Settings retrieved', items.json);
-      data = JSON.parse(items.json).query;
+      data = JSON.parse(items.json);
     });
+
+    $('#filter_checkcontains, #filter_startsWith, #filter_matchcase, #filter_avoidduplicates, #filter_text').change(function () {
+
+      var _json = JSON.parse(origin_query);
+          _json =   $.fn.filterJSON({_json} , {
+                    property: ["path"], // mandatory
+                    wrapper: true,
+                    value: $('#filter_text').val(),
+                    checkContains: $('#filter_checkcontains').is(':checked'),
+                    startsWith: $('#filter_startsWith').is(':checked'),
+                    matchCase: $('#filter_matchcase').is(':checked'),
+                    avoidDuplicates: $('#filter_avoidduplicates').is(':checked'),
+                    sort: true,
+                    sortOrder: 'desc'
+                  });
+
+         
+
+            $('#code').html('<pre><code>'+jsonPrettyPrint.toHtml(_json)+'</code></pre>');
+    });
+
+  chrome.storage.sync.get({'_url_val': _url_val}, function(items) { _url_val = items._url_val;alert(_url_val); });
 });
 
-document.getElementById("view_components").addEventListener("click", components);
-document.getElementById("view_templates").addEventListener("click", page_templates);
-document.getElementById("submit_query").addEventListener("click", submit_query);
 
 
 
@@ -39,6 +73,44 @@ var jsonPrettyPrint = {
 
 
 
+
+document.getElementById("view_components").addEventListener("click", components);
+document.getElementById("view_templates").addEventListener("click", page_templates);
+document.getElementById("view_last_5_pages").addEventListener("click", view_last_5_pages);
+document.getElementById("view_jar_files").addEventListener("click", view_jar_files);
+document.getElementById("submit_query").addEventListener("click", submit_query);
+
+function view_last_5_pages(){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', data.query[2].url, true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            var resp = xhr.responseText;
+            origin_query = resp;
+            $('#code').html('<pre><code>'+jsonPrettyPrint.toHtml(JSON.parse(resp))+'</code></pre>');
+                console.log(resp);    
+            }
+        }
+    xhr.send();  
+};
+
+function view_jar_files(){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', data.query[3].url, true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            var resp = xhr.responseText;
+            origin_query = resp;
+            $('#code').html('<pre><code>'+jsonPrettyPrint.toHtml(JSON.parse(resp))+'</code></pre>');
+                console.log(resp);    
+            }
+        }
+    xhr.send();  
+};
+
+
+
+
 function submit_query(){
 	var url = $('#submit_query_input').val();
 	alert(url);
@@ -47,6 +119,7 @@ function submit_query(){
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
             var resp = xhr.responseText;
+            origin_query = resp;
             $('#code').html('<pre><code>'+jsonPrettyPrint.toHtml(JSON.parse(resp))+'</code></pre>');
                 console.log(resp);    
             }
@@ -57,50 +130,67 @@ function submit_query(){
 
 function page_templates(){
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', data[1].url, true);
+    xhr.open('GET', data.query[1].url, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
             var resp = xhr.responseText;
+            origin_query = resp;
             $('#code').html('<pre><code>'+jsonPrettyPrint.toHtml(JSON.parse(resp))+'</code></pre>');
                 console.log(resp);    
             }
         }
     xhr.send();  
 };
+
+
+
+
 
 function components(){
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', data[0].url, true);
+    alert(_url_val);
+    xhr.open('GET', _url_val +"/"+ data.query[0].url, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
-            var resp = xhr.responseText;
-            $('#code').html('<pre><code>'+jsonPrettyPrint.toHtml(JSON.parse(resp))+'</code></pre>');
-                console.log(resp);    
-                   $('.json-key').click(function() {
-                                            if($( this ).text() == 'path'){
-                                                 view_component_details($( this ).next().text());
-                                            }
-                                        });
+            var resp = JSON.parse(xhr.responseText);
+            origin_query = xhr.responseText;
 
-            }
+
+            $('#code').html('<pre><code>'+jsonPrettyPrint.toHtml(resp)+'</code></pre>');
+                alert(JSON.stringify(resp));   
+               
+                   $('.json-key').each(function() {
+                      if($( this ).text() == 'path'){
+                          $( this ).css("cursor", "pointer"); 
+                          $( this ).css("color", "blue"); 
+                          $( this ).click(function(){
+                            view_component_details($( this ).next().text());
+                          });
+                      }
+                    });
         }
-    xhr.send();                    
-};
-
-
-
-        function view_component_details(val){
-            var url = val.replace(new RegExp('\"', 'g'), '');
-            url = url.replace('/apps/','');
-            var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost:4502/bin/querybuilder.json?path=/content&1_property=sling:resourceType&1_property.value='+url+'&1_property.operation=like&orderby:path', true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4) {
-            var resp = xhr.responseText;
-            $('#code').html('<pre><code>'+jsonPrettyPrint.toHtml(JSON.parse(resp))+'</code></pre>');
-                console.log(resp);    
-            }
-        }
+      }
     xhr.send();  
 
-        }
+}
+
+
+
+
+function view_component_details(val){
+  if(checkAndGetUrl() != null){
+    var url = val.replace(new RegExp('\"', 'g'), '');
+    url = url.replace('/apps/','');
+    var xhr = new XMLHttpRequest();
+
+    xhr.open('GET', checkAndGetUrl()+'bin/querybuilder.json?path=/content&1_property=sling:resourceType&1_property.value='+url+'&1_property.operation=like&orderby:path', true);
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4) {
+              var resp = xhr.responseText;
+              $('#code').html('<pre><code>'+jsonPrettyPrint.toHtml(JSON.parse(resp))+'</code></pre>');
+                  console.log(resp);    
+              }
+      }
+    xhr.send();  
+  }
+}
