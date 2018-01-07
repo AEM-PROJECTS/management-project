@@ -1,5 +1,3 @@
-
-
 var url = $($(window.getSelection().focusNode.parentElement).closest('.parbase').parent().find("cq")[0]).data("path");
 
 if(url== undefined)

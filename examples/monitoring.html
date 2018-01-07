@@ -92,9 +92,9 @@
                 </div>
             </nav>
             <div class="content">
-            <a href="http://localhost:4502/system/console/slinglog/" target="_blank">View Logs console</a><br>
-            <a href="http://localhost:4502/system/console/slinglog/slinglog/tailer.txt?tail=200&grep=*&name=%2Flogs%2Ferror.log" target="_blank">View Error Log / Last 200 lines</a><br>
-            <a href="http://localhost:4502/libs/granite/operations/content/monitoring/page.html" target="_blank">Monitoring Page</a>
+            <a data-querystring-key="logs" data-querystring-value="full_log" href="" target="_blank">View Logs console</a><br>
+            <a data-querystring-key="logs" data-querystring-value="last_log" href="" target="_blank">View Error Log / Last 200 lines</a><br>
+            <a data-querystring-key="logs" data-querystring-value="monitoring" href="" target="_blank">Monitoring Page</a>
             <hr>
             </div>
             <footer class="footer">
@@ -102,9 +102,7 @@
                     <nav class="pull-left">
                         <ul>
                             <li>
-                                <a target="_blank" href="https://www.linkedin.com/in/juanfgr/">
-                                    Owner
-                                </a>
+                               
                             </li>
                         </ul>
                     </nav>

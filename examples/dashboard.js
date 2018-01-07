@@ -19,7 +19,7 @@
             customlist(data);
         });
 
-        $('button').click(function(){
+        $('a').click(function(){
           var _key = $(this).data("querystring-key");
           var _val = $(this).data("querystring-value");
 
@@ -61,6 +61,10 @@ function toggleActions(actions){
 
 function toggleWcmmode(actions){
   chrome.tabs.getSelected(null,function (tab) {
+    if(actions.indexOf("disabled") != -1){
+                myNewUrl = tab.url.replace("/editor.html/content/", "/content/") + "?wcmmode=disabled";
+                chrome.tabs.update({ url: myNewUrl });
+    }else
         chrome.tabs.update({url: tab.url+"?wcmmode="+actions});
  })
 }
@@ -120,7 +124,7 @@ function showSection(){
     function links_list(json){
 
                     var create_body = function(_index, val){
-                        var _thtml = '<tr><td>Author</td><td class="td-actions" style="display:block; text-align:right;">'+val.author+'</td></tr>';
+                        var _thtml = '<tr><td>Author</td><td class="td-actions" style="display:block; text-align:right;"><a href='+val.author+'>'+val.author+'</a></td></tr>';
 
                          $.each(val.publish,function(index, link){
                            _thtml += '<tr><td>Publish '+(index+1)+': </td>'+'<td class="td-actions" style="display:block; text-align:right;">'+
