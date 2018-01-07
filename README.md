@@ -88,7 +88,7 @@
 ![Image of Team](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/team.png)
 
 ## Instance section
-![Image of Query](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/monitoring.png)
+![Image of Instance section](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/monitoring.png)
 
 
 ## Query section
@@ -105,7 +105,8 @@
 }
 ```
 ![Image of Query](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/query.png)
-
+Each result with "path key" contains a redirect to obtain the list of page where the component is used.
+![Image of Query](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/query2.png)
 
 ## Context menu
 If you select a text, the plugin detect the node selected, find the parent node with a cq tag(the nearly component in the DOM) and open a new tab with the selected component or the page in the CRX when you don't selct nothing in the page.
@@ -122,5 +123,11 @@ STEP 2.
 Open the CRX with the exacto or nearly component in the DOM.
 ![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/context_menus_2.png)
 
+HOW TO SET.
+STEP 1.
+[Example file data.json](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/setting.json)
 
+STEP 2.
 [Example file data.json](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/data.json)
+
+
