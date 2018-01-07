@@ -3,15 +3,63 @@
 ## Admin section
 ```json
 {
-    "adminconsole":  [
-        {
-            "section":"Admin",
-            "name":"Sites",
-            "subtitle":"Go to link",
-            "url":"http://localhost:4502/sites.html/content",
-            "icon":"info_outline"
-        }
-    ]
+    "adminconsole":  {
+        "enviroments" : [
+            {
+                "name":"localhost",
+                "url": "http://localhost:4502",
+                "color": "green",
+                "author":"http://localhost:4502",
+                "publish": [
+                    {
+                        "url":"http://localhost:4503"
+                    }
+                ],
+                "custom":[
+                    {
+                        "name":"blah blah",
+                        "url": "https://blahblah.it"
+                    }
+                ]
+            },
+            {
+                "name":"Produccion",
+                "url": "https://blah_blah_publish.it",
+                "color": "orange",
+                "author":"https://blah_blah_publish.aem6.it",
+                "publish": [
+                    {
+                        "url":"http://.....:4503"
+                    },
+                                        {
+                        "url":"http://.....:4503"
+                    },
+                                        {
+                        "url":"http://.......:4503"
+                    },
+                                        {
+                        "url":"http://..........."
+                    }
+                ]
+            }
+            
+        ],
+        "links" : [
+            {
+                "section":"Admin",
+                "name":"Sites",
+                "subtitle":"Go to link",
+                "url":"/sites.html/content",
+                "icon":"info_outline"
+            },
+            {
+                "section":"Content",
+                "name":"Asets",
+                "url":"/assets.html/content/dam",
+                "icon":"store"
+            }
+        ]
+    }
 }
 ```
 ![Image of Admin console](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/admin.png)
@@ -38,6 +86,10 @@
 }
 ```   
 ![Image of Team](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/team.png)
+
+## Instance section
+![Image of Query](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/monitoring.png)
+
 
 ## Query section
 ```json 
