@@ -124,10 +124,11 @@ Open the CRX with the exacto or nearly component in the DOM.
 ![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/context_menus_2.png)
 
 HOW TO SET.
+
 STEP 1.
-[Example file data.json](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/setting.json)
+[Image of setting](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/setting.png)
 
 STEP 2.
-[Example file data.json](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/data.json)
+[Example of ](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/data.json)
 
 
