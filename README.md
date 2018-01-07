@@ -15,6 +15,7 @@
 }
 ```
 ![Image of Admin console](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/admin.png)
+![Image of Admin console 2](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/admin2.png)
 
 ## Team section
 ```json
@@ -36,7 +37,7 @@
     ]
 }
 ```   
-
+![Image of Team](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/team.png)
 
 ## Query section
 ```json 
