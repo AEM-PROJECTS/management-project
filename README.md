@@ -104,9 +104,9 @@
     ]
 }
 ```
-![Image of Query](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/query.png)
+![Image of Query](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/query.PNG)
 Each result with "path key" contains a redirect to obtain the list of page where the component is used.
-![Image of Query](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/query2.png)
+![Image of Query](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/query2.PNG)
 
 ## Context menu
 If you select a text, the plugin detect the node selected, find the parent node with a cq tag(the nearly component in the DOM) and open a new tab with the selected component or the page in the CRX when you don't selct nothing in the page.
