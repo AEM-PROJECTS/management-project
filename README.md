@@ -126,9 +126,9 @@ Open the CRX with the exacto or nearly component in the DOM.
 HOW TO SET.
 
 STEP 1.
-[Image of setting](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/setting.png)
+![Image of setting](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/setting.png)
 
 STEP 2.
-[Example of ](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/data.json)
+[Example of json](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/data.json)
 
 
