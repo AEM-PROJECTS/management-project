@@ -111,7 +111,7 @@ Each result with "path key" contains a redirect to obtain the list of page where
 ## Context menu
 If you select a text, the plugin detect the node selected, find the parent node with a cq tag(the nearly component in the DOM) and open a new tab with the selected component or the page in the CRX when you don't selct nothing in the page.
 
-
+### open page/component in crx
 STEP1.
 
 Select the text that i wish need inspect the componente in the crx and use the plugin.
@@ -123,7 +123,15 @@ STEP 2.
 Open the CRX with the exacto or nearly component in the DOM.
 ![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/context_menus_2.png)
 
-HOW TO SET.
+
+### create package with page
+STEP1.
+![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/download_page.png)
+STEP2.
+![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/download_page_2.png)
+
+
+## HOW TO SET.
 
 STEP 1.
 ![Image of setting](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/setting.png)
