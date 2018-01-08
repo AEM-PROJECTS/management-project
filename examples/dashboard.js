@@ -31,6 +31,19 @@
             toggleActions(_val);
           }
         });
+
+       $("#sectionA").click(function(){
+          $("#blockB").hide();
+          $("#blockA").show();
+       });
+        $("#sectionB").click(function(){
+          $("#blockA").hide();
+          $("#blockB").show();
+       });
+
+ 
+
+
     });
 
 
@@ -70,13 +83,7 @@ function toggleWcmmode(actions){
 }
 
 
-document.getElementById("sectionA").addEventListener("click", showSection);
-document.getElementById("sectionB").addEventListener("click", showSection);
 
-function showSection(){
-  $("#blockA").toggle();
-  $("#blockB").toggle();
-}
 
     function global_data(json){
 

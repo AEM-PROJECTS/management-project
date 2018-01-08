@@ -130,5 +130,3 @@ STEP 1.
 
 STEP 2.
 [Example of json](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/data.json)
-
-
