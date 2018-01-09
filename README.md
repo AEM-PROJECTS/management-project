@@ -138,3 +138,84 @@ STEP 1.
 
 STEP 2.
 [Example of json](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/data.json)
+```json 
+{
+    "adminconsole":  {
+
+        "enviroments" : [
+            {
+                "name":"localhost",
+                "url": "http://localhost:4502",
+                "color": "red",
+                "author":"http://localhost:4502",
+                "publish": [
+                    {
+                        "url":"http://localhost:4503"
+                    }
+                ],
+            }
+        ],
+        "links" : [
+            {
+                "section":"Admin",
+                "name":"Sites",
+                "subtitle":"Go to link",
+                "url":"/sites.html/content",
+                "icon":"info_outline"
+            },
+            {
+                "section":"Content",
+                "name":"Asets",
+                "url":"/assets.html/content/dam",
+                "icon":"store"
+            },
+            {
+                "section":"Admin",
+                "name":"CRXDE Lite",
+                "url":"/crx/de/index.jsp",
+                "icon":"info_outline"
+            },
+            {
+                "section":"Admin",
+                "name":"Replication",
+                "url":"/etc/replication.html",
+                "icon":""
+            },
+            {
+                "section":"Debug",
+                "name":"Querydebug",
+                "url":"/libs/cq/search/content/querydebug.html",
+                "icon":""
+            }
+        ]
+
+
+    },
+    "team": [
+        {
+            "name":"my team",
+            "url":"REDMINE SERVER HERE",
+            "api_key":"&api_key=zzzzzzzzzzzzzzzzzzzzzzz",
+            "tables":[
+                {
+                    "query":"/issues.xml?assigned_to_id=me"
+                },
+                {
+                    "query":"/issues.xml?project_id=44"
+                }
+            ]
+        }
+    ],
+    "logs":
+        [],
+    "query": [
+        {
+             "url":"/bin/querybuilder.json?path=/apps&type=cq:Component&p.limit=-1&orderby:path"
+        }, 
+        {
+            "url":"/bin/querybuilder.json?path=/apps/project/templates&type=cq:Template&p.limit=-1&orderby:path"
+        }
+    ]
+
+}
+```
