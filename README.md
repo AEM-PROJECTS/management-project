@@ -9,23 +9,20 @@ Donwload the project, open the browser(extensions tab) and select the folder wit
 If you select a text, the plugin detect the node selected, find the parent node with a cq tag(the nearly component in the DOM) and open a new tab with the selected component or the page in the CRX when you don't selct nothing in the page.
 
 ### open page/component in crx
-STEP1.
-
-Select the text that i wish need inspect the componente in the crx and use the plugin.
+STEP1.Select the text that i wish need inspect the componente in the crx and use the plugin.
 ![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/context_menus_1.png)
 
 
-STEP 2.
-
-Open the CRX with the exacto or nearly component in the DOM.
+STEP 2.Open the CRX with the exacto or nearly component in the DOM.
 ![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/context_menus_2.png)
 
 
 ### create package with page
 STEP1.
 ![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/download_page.png)
-STEP2.
-The package is generated automatically with the page and resources.
+
+
+STEP2.The package is generated automatically with the page and resources.
 ![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/download_page_2.png)
 
 
