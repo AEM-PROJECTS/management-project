@@ -3,7 +3,7 @@
 
 ## How to isntall
 Donwload the project, open the browser and select the folder with the project.
-![Image how to install](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/install.png)
+![Image how to install](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/isntall.png)
 ## Admin section
 ```json
 {
