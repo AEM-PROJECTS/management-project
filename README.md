@@ -88,7 +88,7 @@
 ![Image of Team](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/team.png)
 
 ## Instance section
-![Image of Instance section](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/monitoring.png)
+![Image of Instance section](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/monitor.png)
 
 
 ## Query section
