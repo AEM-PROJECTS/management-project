@@ -1,7 +1,7 @@
 {
     "name": "AEM - Managment console",
     "description": "AEM - Managment console",
-    "version": "0.1",
+    "version": "0.0.2",
     "manifest_version": 2,
     "background": {
         "scripts": ["assets/js/jquery-3.2.1.min.js","background.js"],

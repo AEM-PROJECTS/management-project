@@ -1,207 +1,146 @@
-    <!doctype html>
-    <html lang="en">
+<!doctype html>
+<html lang="en">
 
-    <head>
-        <meta charset="utf-8" />
-        <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
-        <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Query Panel</title>
-        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-        <meta name="viewport" content="width=device-width" />
-        <!-- Bootstrap core CSS     -->
-        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
-        <!--  Material Dashboard CSS    -->
-        <link href="../assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
-        <!--  CSS for Demo Purpose, don't include it in your project     -->
-        <link href="../assets/css/demo.css" rel="stylesheet" />
-        <!--     Fonts and icons     -->
-        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Query Panel</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Bootstrap core CSS     -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!--  Material Dashboard CSS    -->
+    <link href="../assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="../assets/css/demo.css" rel="stylesheet" />
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+</head>
 
-    <body>
-        <div class="wrapper">
-            <div class="sidebar" data-color="orange" data-image="../assets/img/sidebar-1.jpg">
-                <div class="logo">
-                    <a href="" class="simple-text">
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg">
+            <div class="logo">
+                <a href="" class="simple-text">
                         Plugin AEM
                     </a>
-                </div>
-                <div class="sidebar-wrapper">
-                    <ul class="nav">
-                       <li >
-                            <a href="dashboard.html">
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li>
+                        <a href="dashboard.html">
                                 <i class="material-icons">Admin consoles</i>
                                 <p>Admin consoles</p>
                             </a>
-                        </li>
-                         <li >
-                            <a href="./redmine.html">
+                    </li>
+                    <li>
+                        <a href="./redmine.html">
                                 <i class="material-icons">Team</i>
                                 <p>Team issues</p>
                             </a>
-                        </li>
-                         <li class="active">
-                            <a href="#">
+                    </li>
+                    <li class="active">
+                        <a href="#">
                                 <i class="material-icons">Query</i>
                                 <p>Query</p>
                             </a>
-                        </li>
-                              <li>
-                            <a href="./monitoring.html">
+                    </li>
+                    <li>
+                        <a href="./monitoring.html">
                                 <i class="material-icons">Instance</i>
                                 <p>Instance</p>
                             </a>
-                        </li>
-                        <li>
-                            <a href="./curl.html">
+                    </li>
+                    <li>
+                        <a href="./curl.html">
                                 <i class="material-icons">Curl</i>
                                 <p>Curl Commands</p>
                             </a>
-                        </li>
-                        <li>
-                            <a href="./settings.html">
+                    </li>
+                    <li>
+                        <a href="./settings.html">
                                 <i class="material-icons">Set</i>
                                 <p>Settings</p>
                             </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="main-panel">
-                <nav class="navbar navbar-transparent navbar-absolute">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand" href="#"> Query ADMIN </a>
-                        </div>
-                      
-                    </div>
-                </nav>
-                <div class="content">
-                    <div class="container-fluid">
-                    <div class="row">
-                          <div class="col-md-12">
-                               <div class="card-content table-responsive">
-                                    <table class="table">
-                                        <thead class="text-primary">
-                                            <tr>
-                                                <th style="color:black"><b>Queries</b></th>
-                                                <th><a href=""><b> custom Query</b> (click here)</a></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                            <td><a id="view_components" type="button" target="_blank"> View Components</a></td>
-                                           <td><a id="view_templates" type="button" target="_blank"> View Templates</a></td>
-                                           </tr>
-                                           <tr>
-                                            <td><a id="view_last_5_pages" type="button" target="_blank"> View Last 5 Pages modified</a></td>
-                                            <td><a id="view_jar_files" type="button" target="_blank">Find jar files and order them, newest first</a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                </div>
-                    </div>
-                        <div class="row">
-                           <!--div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-header" data-background-color="orange">
-                                        <h4 class="title">Query builder JSON</h4>
-                                        <p class="category"></p>
-                                    </div>
-                                     <div class="row"> 
-                                     <div class="col-lg-2">
-                                        <p class="col-lg-12 category"><br>&nbsp;&nbsp;&nbsp;</p>
-                                        </div>
-                                <div class="col-lg-8 col-md-8 col-xs-8 form-group is-empty">
-                                    <input id="submit_query_input" type="text" class="form-control" placeholder="Search">
-                                    <span class="material-input"></span>
-                                <span class="material-input"></span>
-                                </div>
-        
-                                <button id="submit_query" type="submit" class="btn btn-white btn-round btn-just-icon">
-                                    <i class="material-icons">search</i>
-                                    <div class="ripple-container"></div>
-                                </button>
-                           
-
-                            </div>
-
-                                </div>
-    </div-->
-                                <div class="card row" style="margin:5px">
-                                  <div class="checkbox col-lg-6 col-xs-6" >
-                                  <p>Filter:&nbsp;</p>
-                                        <label>
-                                            <textarea id="filter_text" checked=""></textarea>
-                                        </label>
-                                    </div>
-
-                                  <div class="checkbox col-lg-6 col-xs-6" style="padding:10px">
-                                        <label>
-                                            <input type="checkbox" id="filter_checkcontains" checked=""><span class="checkbox-material"></span>checkContains
-                                        </label><br>
-                                        <label>
-                                            <input type="checkbox" id="filter_startsWith" checked=""><span class="checkbox-material"></span>startsWith
-                                        </label><br>
-                                  
-                                        <label>
-                                            <input type="checkbox" id="filter_matchcase" checked=""><span class="checkbox-material"></span>matchCase
-                                        </label><br>
-                                  
-                                        <label>
-                                            <input type="checkbox" id="filter_avoidduplicates" checked=""><span class="checkbox-material"></span>avoidDuplicates
-                                        </label>
-                                    </div>
-
-                                </div>
-                                </div>
-
-                           </div>
-                        
-                         <div id="code" class="row"></div>
-                    </div>
-                </div>
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <nav class="pull-left">
-                            <ul>
-                                <li>
-                                   
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </footer>
+                    </li>
+                </ul>
             </div>
         </div>
-    </body>
-    <!--   Core JS Files   -->
-    <script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
-    <script src="../filterJSON.plugin.js" type="text/javascript"></script>
-    <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="../assets/js/material.min.js" type="text/javascript"></script>
-    <!--  Charts Plugin -->
-    <script src="../assets/js/chartist.min.js"></script>
-    <!--  Dynamic Elements plugin -->
-    <script src="../assets/js/arrive.min.js"></script>
-    <!--  PerfectScrollbar Library -->
-    <script src="../assets/js/perfect-scrollbar.jquery.min.js"></script>
-    <!--  Notifications Plugin    -->
-    <script src="../assets/js/bootstrap-notify.js"></script>
-    <!--  Google Maps Plugin    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-    <!-- Material Dashboard javascript methods -->
-    <script src="../assets/js/material-dashboard.js?v=1.2.0"></script>
-    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-    <script src="../assets/js/demo.js"></script>
-    <script src="query.js"></script>
-    </html>
+        <div class="main-panel">
+            <nav class="navbar navbar-transparent navbar-absolute">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"> Query ADMIN [BETA 0.0.2]</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card-content table-responsive">
+                                <table class="table">
+                                    <thead class="text-primary">
+                                        <tr>
+                                            <th style="color:black"><b>Queries</b></th>
+                                            <th><a href="" id="openPage"><b> custom Query</b> (click here)</a></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a id="view_last_5_pages" type="button" target="_blank"> View Last 5 Pages modified</a></td>
+                                            <td><a id="view_jar_files" type="button" target="_blank">Find jar files and order them, newest first</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="code" class="row"></div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+    </div>
+    </div>
+</body>
+<!--   Core JS Files   -->
+<script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="../filterJSON.plugin.js" type="text/javascript"></script>
+<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../assets/js/material.min.js" type="text/javascript"></script>
+<!--  Charts Plugin -->
+<script src="../assets/js/chartist.min.js"></script>
+<!--  Dynamic Elements plugin -->
+<script src="../assets/js/arrive.min.js"></script>
+<!--  PerfectScrollbar Library -->
+<script src="../assets/js/perfect-scrollbar.jquery.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="../assets/js/bootstrap-notify.js"></script>
+<!--  Google Maps Plugin    -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Material Dashboard javascript methods -->
+<script src="../assets/js/material-dashboard.js?v=1.2.0"></script>
+<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+<script src="../assets/js/demo.js"></script>
+<script src="query.js"></script>
+
+</html>

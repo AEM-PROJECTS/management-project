@@ -85,3 +85,20 @@ pre {
 .tim-row h3 {
     margin-top: 0;
 }
+
+.navbar-header{
+  background-color: #444;
+  color: white;
+}
+
+.navbar-brand{
+  color: white;
+}
+
+.navbar-toggle{
+  color: white;
+}
+
+.isInstance{
+  display: none;
+}

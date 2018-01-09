@@ -4,11 +4,15 @@
      
     $().ready(function(){
          setTimeout(function(){ 
-       chrome.storage.sync.get(['last_page','last_page_flag'], function(items) {
+       chrome.storage.sync.get(['last_page','last_page_flag', 'isInstance'], function(items) {
         if(items.last_page_flag == 'false' && items.last_page && (url != items.last_page)){
           window.location.href = origin.replace(url, items.last_page);
         }
          chrome.storage.sync.set({'last_page': 'dashboard.html', 'last_page_flag':'true'}, function() { });
+
+         if(items.isInstance.indexOf('true')!=-1){
+          $('.isInstance').show();
+         }
        });
     }, 50);
 
@@ -131,10 +135,10 @@ function toggleWcmmode(actions){
     function links_list(json){
 
                     var create_body = function(_index, val){
-                        var _thtml = '<tr><td>Author</td><td class="td-actions" style="display:block; text-align:right;"><a href='+val.author+'>'+val.author+'</a></td></tr>';
+                        var _thtml = '<tr><td><b>Author</b></td><td class="td-actions" style="display:block; text-align:right;"><a href='+val.author+'>'+val.author+'</a></td></tr>';
 
                          $.each(val.publish,function(index, link){
-                           _thtml += '<tr><td>Publish '+(index+1)+': </td>'+'<td class="td-actions" style="display:block; text-align:right;">'+
+                           _thtml += '<tr><td><b>Publish '+(index+1)+':</b> </td>'+'<td class="td-actions" style="display:block; text-align:right;">'+
                            '<a href='+link.url+'>'+link.url+'&nbsp;&nbsp;</a></td></tr>';
                                                         
                          }); 
@@ -189,7 +193,7 @@ function toggleWcmmode(actions){
                         var _thtml = '';
 
                          $.each(val.custom,function(index, link){
-                           _thtml += '<tr><td>'+link.name+' : </td>'+'<td class="td-actions" style="display:block; text-align:right;">'+
+                           _thtml += '<tr><td><b>'+link.name+':</b> </td>'+'<td class="td-actions" style="display:block; text-align:right;">'+
                            '<a href='+link.url+'>'+link.url+'&nbsp;&nbsp;</a></td></tr>';
                                                         
                          }); 

@@ -7,7 +7,8 @@ var $ = jQuery.noConflict();
     var url = origin.split('/')[origin.split('/').length - 1];
 
 $().ready(function(){
-    chrome.storage.sync.get({'_url_val': _url_val}, function(items) { _url_val = items._url_val; });
+    chrome.storage.sync.get({'_url_val': _url_val}, function(items) { _url_val = items._url_val;
+  });
     
          setTimeout(function(){ 
        chrome.storage.sync.get(['last_page','last_page_flag'], function(items) {
@@ -44,6 +45,9 @@ $().ready(function(){
             $('#code').html('<pre><code>'+jsonPrettyPrint.toHtml(_json)+'</code></pre>');
     });
 
+    $('#openPage').click(function(){
+      chrome.tabs.create({url: "./examples/query_1.html"});
+    });
 });
 
 

@@ -1,14 +1,12 @@
-  var SLING_INFO = '/system/console/status-slingsettings.json',
-      SYSTEM_INFO = '/system/console/status-System%20Properties.json';
   var _url_val = null;
   var origin = window.location.href;
   var url = origin.split('/')[origin.split('/').length - 1];
 
   $().ready(function() {
-      chrome.storage.sync.get({ '_url_val': _url_val }, function(items) {
+      chrome.storage.sync.get(['_url_val', 'slingInfo', 'systemInfo'], function(items) {
           _url_val = items._url_val;
-          getInfo(_url_val + SLING_INFO);
-          getInfo2(_url_val + SYSTEM_INFO);
+          getInfo(items.slingInfo);
+          getInfo(items.systemInfo);
       });
 
       setTimeout(function() {
@@ -40,85 +38,12 @@
           _url = _url_val + "/system/console/slinglog/slinglog/tailer.txt?tail=200&grep=*&name=%2Flogs%2Ferror.log";
       } else if ("monitoring".indexOf(actions) != -1) {
           _url = _url_val + "/libs/granite/operations/content/monitoring/page.html";
+      }else if("i18n".indexOf(actions) != -1){
+          _url = _url_val + "/libs/cq/i18n/translator.html";
       }
       var createProperties = { url: _url };
       chrome.tabs.create(createProperties);
   }
-
-
-
-
-
-
-  /**
-   * Converts an array of strings with key value pairs separated by an
-   * equals sign.
-   *
-   * Certain responses with JSON Sling selectors to the Felix console returns
-   * this proprietary format.
-   *
-   * @param {Array} array of strings
-   * @returns {JSON} JSON object created from array
-   */
-  function convertSlingArrayToObject(slingArray) {
-      var SEPARATOR = ' = ',
-          slingObject = {},
-          tmp,
-          x;
-
-      for (x = 0; x < slingArray.length; x++) {
-          tmp = slingArray[x].split(SEPARATOR);
-          slingObject[tmp[0]] = tmp[1];
-      }
-
-      return slingObject;
-  }
-
-
-
-
-  function getInfo2(url, callback, preventSuccessMessage) {
-      var xmlhttp = new XMLHttpRequest();
-
-      xmlhttp.onreadystatechange = function() {
-          var responseText,
-              data;
-
-          if (xmlhttp.readyState === 4) {
-              if (xmlhttp.status === 200) {
-
-                  if (!preventSuccessMessage) {
-                      /* Escape backslashes for Windows servers. */
-                      responseText = xmlhttp.responseText;
-                      responseText = responseText.replace(/\\/g, '\\\\');
-
-                      data = JSON.parse(responseText);
-                      var array_ = convertSlingArrayToObject(data);
-                      var html = "<b>System info</b><pre>";
-                      html += "<b>java.runtime.name: </b>" + array_["java.runtime.name"] + "<br>";
-                      html += "<b>java.runtime.version: </b>" + array_["java.runtime.version"] + "<br>";
-                      html += "<b>java.vendor: </b>" + array_["java.vendor"] + "<br>";
-                      html += "<b>os.name: </b>" + array_["os.name"] + "<br>";
-                      html += "<b>os.version: </b>" + array_["os.version"] + "<br></pre>";
-                      $('body .content').append(html);
-                      return data;
-                  } else {
-                      data = xmlhttp.responseText;
-                  }
-
-                  if (callback) {
-                      callback(data);
-                  }
-              } else {
-                  return null;
-              }
-          }
-      };
-
-      xmlhttp.open('GET', url, true);
-      xmlhttp.send();
-  }
-
 
 
   /**
@@ -130,44 +55,6 @@
    * @param {Function} Callback function.
    * @param {Boolean} preventSuccessMessage  
    */
-  function getInfo(url, callback, preventSuccessMessage) {
-      var xmlhttp = new XMLHttpRequest();
-
-      xmlhttp.onreadystatechange = function() {
-          var responseText,
-              data;
-
-          if (xmlhttp.readyState === 4) {
-              if (xmlhttp.status === 200) {
-
-                  if (!preventSuccessMessage) {
-                      /* Escape backslashes for Windows servers. */
-                      responseText = xmlhttp.responseText;
-                      responseText = responseText.replace(/\\/g, '\\\\');
-
-                      data = JSON.parse(responseText);
-                      var array_ = convertSlingArrayToObject(data);
-                      var html = "<b>Instance info</b><pre>";
-                      html += "<b>Sling ID: </b>" + array_["Sling ID"] + "<br>";
-                      html += "<b>Sling Name: </b>" + array_["Sling Name"] + "<br>";
-                      html += "<b>Sling Home: </b>" + array_["Sling Home"] + "<br>";
-                      html += "<b>Sling Home URL: </b>" + array_["Sling Home URL"] + "<br>";
-                      html += "<b>Run Modes: </b>" + array_["Run Modes"] + "<br></pre>";
-                      $('body .content').append(html);
-                      return data;
-                  } else {
-                      data = xmlhttp.responseText;
-                  }
-
-                  if (callback) {
-                      callback(data);
-                  }
-              } else {
-                  return null;
-              }
-          }
-      };
-
-      xmlhttp.open('GET', url, true);
-      xmlhttp.send();
+  function getInfo(html, callback, preventSuccessMessage) {
+    $('body .content').append(html);             
   }
