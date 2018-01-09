@@ -130,7 +130,6 @@ function downloadPage(info, tab) {
                     var img = document.createElement('img');
                     img.src = results[0][i];
                     if (img.src.indexOf("/content/dam/") != -1) {
-                        alert(img.src);
                         var _imgurl = new URL(img.src);
                         filter += ',{root: "' + _imgurl.pathname + '", rules: []}';
                     }

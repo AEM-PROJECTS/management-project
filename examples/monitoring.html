@@ -21,7 +21,6 @@
 </head>
 
 <body id="body">
-
     <div class="wrapper">
         <div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg">
             <!--
@@ -42,20 +41,13 @@
                             <p>Admin consoles</p>
                         </a>
                     </li>
-                     <li>
+                    <li>
                         <a href="./redmine.html">
                             <i class="material-icons">Team</i>
                             <p>Team issues</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="./query.html">
-                            <i class="material-icons">Query</i>
-                            <p>Query</p>
-                        </a>
-                    </li>
-                
-                    <li class="active"> 
+                    <li class="active">
                         <a href="">
                             <i class="material-icons">Instance</i>
                             <p>Instance</p>
@@ -88,22 +80,27 @@
                         </button>
                         <a class="navbar-brand" href="#"> Instance console [BETA 0.0.2]</a>
                     </div>
-                   
                 </div>
             </nav>
             <div class="content">
-            <a data-querystring-key="logs" data-querystring-value="full_log" href="" target="_blank">View Logs console</a><br>
-            <a data-querystring-key="logs" data-querystring-value="last_log" href="" target="_blank">View Error Log / Last 200 lines</a><br>
-            <a data-querystring-key="logs" data-querystring-value="monitoring" href="" target="_blank">Monitoring Page</a><br>
-            <a data-querystring-key="logs" data-querystring-value="i18n" href="" target="_blank">i18n page</a>
-            <hr>
+               
+                <div class="container-fluid isInstance">
+                 <a href="" id="openPage"><b> custom Query</b> (click here)</a><br><br>
+                    <a data-querystring-key="logs" data-querystring-value="full_log" href="" target="_blank">View Logs console</a>
+                    <br>
+                    <a data-querystring-key="logs" data-querystring-value="last_log" href="" target="_blank">View Error Log / Last 200 lines</a>
+                    <br>
+                    <a data-querystring-key="logs" data-querystring-value="monitoring" href="" target="_blank">Monitoring Page</a>
+                    <br>
+                    <a data-querystring-key="logs" data-querystring-value="i18n" href="" target="_blank">i18n page</a>
+                    <hr>
+                </div>
             </div>
             <footer class="footer">
                 <div class="container-fluid">
                     <nav class="pull-left">
                         <ul>
                             <li>
-                               
                             </li>
                         </ul>
                     </nav>
@@ -113,8 +110,7 @@
     </div>
 </body>
 <!--   Core JS Files   -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../assets/js/material.min.js" type="text/javascript"></script>
 <!--  Charts Plugin -->
@@ -131,6 +127,6 @@
 <script src="../assets/js/material-dashboard.js?v=1.2.0"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="../assets/js/demo.js"></script>
-
 <script src="monitoring.js"></script>
+
 </html>

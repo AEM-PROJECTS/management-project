@@ -3,10 +3,14 @@
   var url = origin.split('/')[origin.split('/').length - 1];
 
   $().ready(function() {
-      chrome.storage.sync.get(['_url_val', 'slingInfo', 'systemInfo'], function(items) {
+      chrome.storage.sync.get(['_url_val', 'slingInfo', 'systemInfo', 'isInstance'], function(items) {
           _url_val = items._url_val;
-          getInfo(items.slingInfo);
-          getInfo(items.systemInfo);
+        if(items.isInstance.indexOf('true')!=-1){
+            getInfo(items.slingInfo);
+            getInfo(items.systemInfo);
+          $('.isInstance').show();
+         }
+
       });
 
       setTimeout(function() {
@@ -28,6 +32,10 @@
           }
       });
 
+    $('#openPage').click(function(){
+      chrome.tabs.create({url: "./examples/query_1.html"});
+    });
+    
   });
 
   function toggleLog(actions) {
@@ -56,5 +64,5 @@
    * @param {Boolean} preventSuccessMessage  
    */
   function getInfo(html, callback, preventSuccessMessage) {
-    $('body .content').append(html);             
+    $('body .content > .container-fluid').append(html);             
   }
