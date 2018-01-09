@@ -25,6 +25,7 @@ Open the CRX with the exacto or nearly component in the DOM.
 STEP1.
 ![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/download_page.png)
 STEP2.
+The package is generated automatically with the page and resources.
 ![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/download_page_2.png)
 
 
