@@ -2,8 +2,30 @@
 
 
 ## How to isntall
-Donwload the project, open the browser and select the folder with the project.
-![Image how to install](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/install.png)
+Donwload the project, open the browser(extensions tab) and select the folder with the project.
+![Image how to install](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/isntall.png)
+
+## Context menu
+If you select a text, the plugin detect the node selected, find the parent node with a cq tag(the nearly component in the DOM) and open a new tab with the selected component or the page in the CRX when you don't selct nothing in the page.
+
+### open page/component in crx
+STEP1. Select the text that i wish need inspect the componente in the crx and use the plugin.
+![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/context_menus_1.png)
+
+
+STEP 2. Open the CRX with the exacto or nearly component in the DOM.
+![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/context_menus_2.png)
+
+
+### create package with page to test
+STEP1.
+![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/download_page.png)
+
+
+STEP2. The package is generated automatically with the page and resources.
+![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/download_page_2.png)
+
+
 ## Admin section
 ```json
 {
@@ -112,36 +134,13 @@ Donwload the project, open the browser and select the folder with the project.
 Each result with "path key" contains a redirect to obtain the list of page where the component is used.
 ![Image of Query](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/query2.PNG)
 
-## Context menu
-If you select a text, the plugin detect the node selected, find the parent node with a cq tag(the nearly component in the DOM) and open a new tab with the selected component or the page in the CRX when you don't selct nothing in the page.
-
-### open page/component in crx
-STEP1.
-
-Select the text that i wish need inspect the componente in the crx and use the plugin.
-![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/context_menus_1.png)
-
-
-STEP 2.
-
-Open the CRX with the exacto or nearly component in the DOM.
-![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/context_menus_2.png)
-
-
-### create package with page
-STEP1.
-![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/download_page.png)
-STEP2.
-![Image of context_Menus](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/download_page_2.png)
-
 
 ## HOW TO SET.
 
 STEP 1.
 ![Image of setting](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/setting.png)
 
-STEP 2.
-[Example of json](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/data.json)
+STEP 2. [Example of json](https://github.com/AEM-PROJECTS/management-project/blob/master/documentation/data.json)
 ```json 
 {
     "adminconsole":  {
