@@ -265,7 +265,7 @@ chrome.tabs.onActivated.addListener(function() {
 
 
             var xmlhttp2 = new XMLHttpRequest();
-var responseText2;
+            var responseText2;
             xmlhttp2.onreadystatechange = function() {
                 if (xmlhttp2.readyState === 4 && xmlhttp2.status === 200) {
 
@@ -274,13 +274,13 @@ var responseText2;
 
                     _data = JSON.parse(responseText2);
                     var array_ = convertSlingArrayToObject(_data);
-                      var html = "<b>System info</b><pre>";
-                      html += "<b>java.runtime.name: </b>" + array_["java.runtime.name"] + "<br>";
-                      html += "<b>java.runtime.version: </b>" + array_["java.runtime.version"] + "<br>";
-                      html += "<b>java.vendor: </b>" + array_["java.vendor"] + "<br>";
-                      html += "<b>os.name: </b>" + array_["os.name"] + "<br>";
-                      html += "<b>os.version: </b>" + array_["os.version"] + "<br></pre>";
-                    chrome.storage.sync.set({'systemInfo': html });
+                    var html = "<b>System info</b><pre>";
+                    html += "<b>java.runtime.name: </b>" + array_["java.runtime.name"] + "<br>";
+                    html += "<b>java.runtime.version: </b>" + array_["java.runtime.version"] + "<br>";
+                    html += "<b>java.vendor: </b>" + array_["java.vendor"] + "<br>";
+                    html += "<b>os.name: </b>" + array_["os.name"] + "<br>";
+                    html += "<b>os.version: </b>" + array_["os.version"] + "<br></pre>";
+                    chrome.storage.sync.set({ 'systemInfo': html });
                 }
             }
 
@@ -288,7 +288,7 @@ var responseText2;
             xmlhttp2.send();
 
 
-            
+
         }
     });
 });

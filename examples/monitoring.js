@@ -5,11 +5,11 @@
   $().ready(function() {
       chrome.storage.sync.get(['_url_val', 'slingInfo', 'systemInfo', 'isInstance'], function(items) {
           _url_val = items._url_val;
-        if(items.isInstance.indexOf('true')!=-1){
-            getInfo(items.slingInfo);
-            getInfo(items.systemInfo);
-          $('.isInstance').show();
-         }
+          if (items.isInstance.indexOf('true') != -1) {
+              getInfo(items.slingInfo);
+              getInfo(items.systemInfo);
+              $('.isInstance').show();
+          }
 
       });
 
@@ -32,10 +32,10 @@
           }
       });
 
-    $('#openPage').click(function(){
-      chrome.tabs.create({url: "./examples/query_1.html"});
-    });
-    
+      $('#openPage').click(function() {
+          chrome.tabs.create({ url: "./examples/query_1.html" });
+      });
+
   });
 
   function toggleLog(actions) {
@@ -46,7 +46,7 @@
           _url = _url_val + "/system/console/slinglog/slinglog/tailer.txt?tail=200&grep=*&name=%2Flogs%2Ferror.log";
       } else if ("monitoring".indexOf(actions) != -1) {
           _url = _url_val + "/libs/granite/operations/content/monitoring/page.html";
-      }else if("i18n".indexOf(actions) != -1){
+      } else if ("i18n".indexOf(actions) != -1) {
           _url = _url_val + "/libs/cq/i18n/translator.html";
       }
       var createProperties = { url: _url };
@@ -64,5 +64,5 @@
    * @param {Boolean} preventSuccessMessage  
    */
   function getInfo(html, callback, preventSuccessMessage) {
-    $('body .content > .container-fluid').append(html);             
+      $('body .content > .container-fluid').append(html);
   }

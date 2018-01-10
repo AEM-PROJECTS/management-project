@@ -21,7 +21,6 @@
 </head>
 
 <body id="body">
-
     <div class="wrapper">
         <div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg">
             <!--
@@ -42,19 +41,12 @@
                             <p>Admin consoles</p>
                         </a>
                     </li>
-                     <li>
+                    <li>
                         <a href="./redmine.html">
                             <i class="material-icons">Team</i>
                             <p>Team issues</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="./query.html">
-                            <i class="material-icons">Query</i>
-                            <p>Query</p>
-                        </a>
-                    </li>
-                
                     <li>
                         <a href="./monitoring.html">
                             <i class="material-icons">Instance</i>
@@ -88,370 +80,183 @@
                         </button>
                         <a class="navbar-brand" href="#"> Curl console [BETA 0.0.2]</a>
                     </div>
-                   
                 </div>
             </nav>
             <div class="content">
                 <div class="container-fluid">
-                  <div>
-
-<div class="header parbase section">
-
-    <a name="main-pars_header_1186888251"></a>
-    
-</div>
-<div class="header parbase section">
-
-    <a name="main-pars_header_1491847589"></a>
-    
-        
-        
-            
-            
-            
-            
-            
-            <div class="header  ">
-                <h3 id="REPLICATIONACTIONS">
+                    <div>
+                        <div class="header parbase section">
+                            <a name="main-pars_header_1186888251"></a>
+                        </div>
+                        <div class="header parbase section">
+                            <a name="main-pars_header_1491847589"></a>
+                            <div class="header  ">
+                                <h5 id="REPLICATIONACTIONS">
                     REPLICATION ACTIONS:
-                </h3>
-                
-                
-            </div>
-            <!-- for Cascading Toc -->
-            
-                
-            
-        
-    
-
-</div>
-<div class="text parbase section">
-
-    <a name="main-pars_text_996363293"></a>
-    
-        
-            <div class="text"><p><strong>Activate</strong></p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -X POST -F path="/content/path/to/page" -F cmd="activate" http://localhost:4502/bin/replicate.json</p>
-<p><strong>Deactivate</strong><br>
-&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -X POST -F path="/content/path/to/page" -F cmd="deactivate" http://localhost:4502/bin/replicate.json</p>
-<p><strong>Tree Activation</strong><br>
-&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -F cmd=activate -F ignoredeactivated=true -F onlymodified=true&nbsp;<br>
-&nbsp; &nbsp; &nbsp; &nbsp; -F path=/content/geometrixx http://localhost:4502/etc/replication/treeactivation.html</p>
-</div>
-        
-    
-    
-
-</div>
-<div class="header parbase section">
-
-    <a name="main-pars_header_560117719"></a>
-    
-        
-        
-            
-            
-            
-            
-            
-            <div class="header  ">
-                <h3 id="PAGES">
+                </h5>
+                            </div>
+                            <!-- for Cascading Toc -->
+                        </div>
+                        <div class="text parbase section">
+                            <a name="main-pars_text_996363293"></a>
+                            <div class="text">
+                                <p><strong>Activate</strong></p>
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -X POST -F path="/content/path/to/page" -F cmd="activate" http://localhost:4502/bin/replicate.json</p>
+                                <p><strong>Deactivate</strong>
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -X POST -F path="/content/path/to/page" -F cmd="deactivate" http://localhost:4502/bin/replicate.json</p>
+                                <p><strong>Tree Activation</strong>
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -F cmd=activate -F ignoredeactivated=true -F onlymodified=true&nbsp;
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; -F path=/content/geometrixx http://localhost:4502/etc/replication/treeactivation.html</p>
+                            </div>
+                        </div>
+                        <div class="header parbase section">
+                            <a name="main-pars_header_560117719"></a>
+                            <div class="header  ">
+                                <h5 id="PAGES">
                     PAGES:
-                </h3>
-                
-                
-            </div>
-            <!-- for Cascading Toc -->
-            
-                
-            
-        
-    
-
-</div>
-<div class="text parbase section">
-
-    <a name="main-pars_text_810521863"></a>
-    
-        
-            <div class="text"><p><strong>Lock page</strong><br>
-&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -X POST -F cmd="lockPage" -F path="/content/path/to/page" -F "_charset_"="utf-8" http://localhost:4502/bin/wcmcommand<br>
-</p>
-<p><strong>Unlock page</strong><br>
-&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -X POST -F cmd="unlockPage" -F path="/content/path/to/page" -F "_charset_"="utf-8" http://localhost:4502/bin/wcmcommand</p>
-<p><strong>Copy page</strong><br>
-&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -F cmd=copyPage -F destParentPath=/path/to/destination/parent -F srcPath=/path/to/source/locaiton http://localhost:4502/bin/wcmcommand<br>
-</p>
-</div>
-        
-    
-    
-
-</div>
-<div class="header parbase section">
-
-    <a name="main-pars_header_863744674"></a>
-    
-        
-        
-            
-            
-            
-            
-            
-            <div class="header  ">
-                <h3 id="REPLICATIONAGENT">
+                </h5>
+                            </div>
+                            <!-- for Cascading Toc -->
+                        </div>
+                        <div class="text parbase section">
+                            <a name="main-pars_text_810521863"></a>
+                            <div class="text">
+                                <p><strong>Lock page</strong>
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -X POST -F cmd="lockPage" -F path="/content/path/to/page" -F "_charset_"="utf-8" http://localhost:4502/bin/wcmcommand
+                                    <br>
+                                </p>
+                                <p><strong>Unlock page</strong>
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -X POST -F cmd="unlockPage" -F path="/content/path/to/page" -F "_charset_"="utf-8" http://localhost:4502/bin/wcmcommand</p>
+                                <p><strong>Copy page</strong>
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -F cmd=copyPage -F destParentPath=/path/to/destination/parent -F srcPath=/path/to/source/locaiton http://localhost:4502/bin/wcmcommand
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="header parbase section">
+                            <a name="main-pars_header_863744674"></a>
+                            <div class="header  ">
+                                <h5 id="REPLICATIONAGENT">
                     REPLICATION AGENT:
-                </h3>
-                
-                
-            </div>
-            <!-- for Cascading Toc -->
-            
-                
-            
-        
-    
-
-</div>
-<div class="text parbase section">
-
-    <a name="main-pars_text_864258460"></a>
-    
-        
-            <div class="text"><p><strong>Create Replication Agents</strong></p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin 'http://localhost:4502/bin/wcmcommand' -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' --data 'cmd=createPage&amp;_charset_=utf-8&amp;parentPath=/etc/replication/agents.author&amp;title=ReplicationAgentTest&amp;label=&amp;template=/libs/cq/replication/templates/agent'</p>
-</div>
-        
-    
-    
-
-</div>
-<div class="header parbase section">
-
-    <a name="main-pars_header_328062015"></a>
-    
-        
-        
-            
-            
-            
-            
-            
-            <div class="header  ">
-                <h3 id="BUNDLES">
+                </h5>
+                            </div>
+                            <!-- for Cascading Toc -->
+                        </div>
+                        <div class="text parbase section">
+                            <a name="main-pars_text_864258460"></a>
+                            <div class="text">
+                                <p><strong>Create Replication Agents</strong></p>
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin 'http://localhost:4502/bin/wcmcommand' -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' --data 'cmd=createPage&amp;_charset_=utf-8&amp;parentPath=/etc/replication/agents.author&amp;title=ReplicationAgentTest&amp;label=&amp;template=/libs/cq/replication/templates/agent'</p>
+                            </div>
+                        </div>
+                        <div class="header parbase section">
+                            <a name="main-pars_header_328062015"></a>
+                            <div class="header  ">
+                                <h5 id="BUNDLES">
                     BUNDLES:
-                </h3>
-                
-                
-            </div>
-            <!-- for Cascading Toc -->
-            
-                
-            
-        
-    
-
-</div>
-<div class="text parbase section">
-
-    <a name="main-pars_text_750431397"></a>
-    
-        
-            <div class="text"><p><strong>Uninstall a bundle</strong></p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -daction=uninstall http://localhost:4505/system/console/bundles/"name of bundle"</p>
-<p><strong>Install a bundle</strong><br>
-&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -F action=install -F bundlestartlevel=20 -F&nbsp;<br>
-&nbsp; &nbsp; &nbsp; &nbsp; bundlefile=@"name of jar.jar" http://localhost:4505/system/console/bundles</p>
-<p><strong>Build a bundle</strong><br>
-&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -F bundleHome=/apps/centrica/bundles/name of bundle -F&nbsp;<br>
-&nbsp; &nbsp; &nbsp; &nbsp; descriptor=/apps/centrica/bundles/com.centrica.cq.wcm.core-bundle/name_of_bundle.bnd&nbsp;<br>
-&nbsp; &nbsp; &nbsp; &nbsp; http://localhost:4505/libs/crxde/build</p>
-<p><strong>Stop a bundle</strong><br>
-&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin http://localhost:4505/system/console/bundles/org.apache.sling.scripting.jsp&nbsp;<br>
-&nbsp; &nbsp; &nbsp; &nbsp; -F action=stop</p>
-<p><strong>Start a bundle</strong><br>
-&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin http://localhost:4505/system/console/bundles/org.apache.sling.scripting.jsp&nbsp;<br>
-&nbsp; &nbsp; &nbsp; &nbsp; -F action=start</p>
-</div>
-        
-    
-    
-
-</div>
-<div class="header parbase section">
-
-    <a name="main-pars_header_13098158"></a>
-    
-        
-        
-            
-            
-            
-            
-            
-            <div class="header  ">
-                <h3 id="PACKAGES">
+                </h5>
+                            </div>
+                            <!-- for Cascading Toc -->
+                        </div>
+                        <div class="text parbase section">
+                            <a name="main-pars_text_750431397"></a>
+                            <div class="text">
+                                <p><strong>Uninstall a bundle</strong></p>
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -daction=uninstall http://localhost:4505/system/console/bundles/"name of bundle"</p>
+                                <p><strong>Install a bundle</strong>
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -F action=install -F bundlestartlevel=20 -F&nbsp;
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; bundlefile=@"name of jar.jar" http://localhost:4505/system/console/bundles</p>
+                                <p><strong>Build a bundle</strong>
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -F bundleHome=/apps/centrica/bundles/name of bundle -F&nbsp;
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; descriptor=/apps/centrica/bundles/com.centrica.cq.wcm.core-bundle/name_of_bundle.bnd&nbsp;
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; http://localhost:4505/libs/crxde/build</p>
+                                <p><strong>Stop a bundle</strong>
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin http://localhost:4505/system/console/bundles/org.apache.sling.scripting.jsp&nbsp;
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; -F action=stop</p>
+                                <p><strong>Start a bundle</strong>
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin http://localhost:4505/system/console/bundles/org.apache.sling.scripting.jsp&nbsp;
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; -F action=start</p>
+                            </div>
+                        </div>
+                        <div class="header parbase section">
+                            <a name="main-pars_header_13098158"></a>
+                            <div class="header  ">
+                                <h5 id="PACKAGES">
                     PACKAGES:
-                </h3>
-                
-                
-            </div>
-            <!-- for Cascading Toc -->
-            
-                
-            
-        
-    
-
-</div>
-<div class="text parbase section">
-
-    <a name="main-pars_text_718948639"></a>
-    
-        
-            <div class="text"><p><strong>Upload a new package</strong></p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -F package=@"name_of_package.zip" http://localhost:4505/crx/packmgr/service/.json/?cmd=upload</p>
-<p><strong>Install an existing package</strong><br>
-&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -X POST http://localhost:4505/crx/packmgr/service/.json/etc/packages/export/name of package?cmd=install</p>
-<p><strong>Upload a package AND install</strong><br>
-&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -F file=@"name of zip file" -F name="name of package"&nbsp;<br>
-&nbsp; &nbsp; &nbsp; &nbsp; -F force=true -F install=true http://localhost:4505/crx/packmgr/service.jsp</p>
-<p><strong>Upload a package DO NOT install</strong><br>
-&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -F file=@"name of zip file" -F name="name of package"&nbsp;<br>
-&nbsp; &nbsp; &nbsp; &nbsp; -F force=true -F install=false http://localhost:4505/crx/packmgr/service.jsp</p>
-<p><strong>Rebuild an existing package in CQ</strong><br>
-&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -X POST http://localhost:4505:/crx/packmgr/service/.json/etc/packages/name_of_package.zip?cmd=build</p>
-<p><strong>Download (the package)</strong><br>
-&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin http://localhost:4505/etc/packages/export/name_of_package.zip &gt; name of local package file</p>
-</div>
-        
-    
-    
-
-</div>
-<div class="header parbase section">
-
-    <a name="main-pars_header_1869235169"></a>
-    
-        
-        
-            
-            
-            
-            
-            
-            <div class="header  ">
-                <h3 id="USERADMINISTRATION">
+                </h5>
+                            </div>
+                            <!-- for Cascading Toc -->
+                        </div>
+                        <div class="text parbase section">
+                            <a name="main-pars_text_718948639"></a>
+                            <div class="text">
+                                <p><strong>Upload a new package</strong></p>
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -F package=@"name_of_package.zip" http://localhost:4505/crx/packmgr/service/.json/?cmd=upload</p>
+                                <p><strong>Install an existing package</strong>
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -X POST http://localhost:4505/crx/packmgr/service/.json/etc/packages/export/name of package?cmd=install</p>
+                                <p><strong>Upload a package AND install</strong>
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -F file=@"name of zip file" -F name="name of package"&nbsp;
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; -F force=true -F install=true http://localhost:4505/crx/packmgr/service.jsp</p>
+                                <p><strong>Upload a package DO NOT install</strong>
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -F file=@"name of zip file" -F name="name of package"&nbsp;
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; -F force=true -F install=false http://localhost:4505/crx/packmgr/service.jsp</p>
+                                <p><strong>Rebuild an existing package in CQ</strong>
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin -X POST http://localhost:4505:/crx/packmgr/service/.json/etc/packages/name_of_package.zip?cmd=build</p>
+                                <p><strong>Download (the package)</strong>
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp; curl -u admin:admin http://localhost:4505/etc/packages/export/name_of_package.zip &gt; name of local package file</p>
+                            </div>
+                        </div>
+                        <div class="header parbase section">
+                            <a name="main-pars_header_1869235169"></a>
+                            <div class="header  ">
+                                <h5 id="USERADMINISTRATION">
                     USER ADMINISTRATION:
-                </h3>
-                
-                
-            </div>
-            <!-- for Cascading Toc -->
-            
-                
-            
-        
-    
-
-</div>
-<div class="text parbase section">
-
-    <a name="main-pars_text_364978331"></a>
-    
-        
-            <div class="text"><p><strong>Add user to a group</strong></p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;curl -u admin:admin -FaddMembers=testing http://localhost:4502/home/groups/c/contributor.rw.html</p>
-<p><strong>Remove User from a Group</strong><br>
-&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;curl -u admin:admin -FremoveMembers=testing http://localhost:4502/home/groups/c/contributor.rw.html</p>
-</div>
-        
-    
-    
-
-</div>
-<div class="header parbase section">
-
-    <a name="main-pars_header_35058382"></a>
-    
-        
-        
-            
-            
-            
-            
-            
-            <div class="header  ">
-                <h3 id="BACKUP">
+                </h5>
+                            </div>
+                            <!-- for Cascading Toc -->
+                        </div>
+                        <div class="text parbase section">
+                            <a name="main-pars_text_364978331"></a>
+                            <div class="text">
+                                <p><strong>Add user to a group</strong></p>
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;curl -u admin:admin -FaddMembers=testing http://localhost:4502/home/groups/c/contributor.rw.html</p>
+                                <p><strong>Remove User from a Group</strong>
+                                    <br> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;curl -u admin:admin -FremoveMembers=testing http://localhost:4502/home/groups/c/contributor.rw.html</p>
+                            </div>
+                        </div>
+                        <div class="header parbase section">
+                            <a name="main-pars_header_35058382"></a>
+                            <div class="header  ">
+                                <h5 id="BACKUP">
                     BACKUP
-                </h3>
-                
-                
-            </div>
-            <!-- for Cascading Toc -->
-            
-                
-            
-        
-    
-
-</div>
-<div class="text parbase section">
-
-    <a name="main-pars_text_1637664332"></a>
-    
-        
-            <div class="text"><p>Set delay time (optional - default is 10)&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
-<p>curl -u admin:admin -X POST <a href="http://localhost:6202/system/console/jmx/com.adobe.granite:type=Repository/a/BackupDelay?">http://localhost:6202/system/console/jmx/com.adobe.granite:type=Repository/a/BackupDelay?value=0</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-<p>curl -u admin:admin -X POST <a href="http://localhost:6202/system/console/jmx/com.adobe.granite%3Atype%3DRepository/op/startBackup/java.lang.String?target=mvtest">http://localhost:6202/system/console/jmx/com.adobe.granite%3Atype%3DRepository/op/startBackup/java.lang.String?target=mvtest</a></p>
-</div>
-        
-    
-    
-
-</div>
-<div class="header parbase section">
-
-    <a name="main-pars_header_717671758"></a>
-    
-        
-        
-            
-            
-            
-            
-            
-            <div class="header  ">
-                <h3 id="UploadAssetsinDAM">
+                </h5>
+                            </div>
+                            <!-- for Cascading Toc -->
+                        </div>
+                        <div class="text parbase section">
+                            <a name="main-pars_text_1637664332"></a>
+                            <div class="text">
+                                <p>Set delay time (optional - default is 10)&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+                                <p>curl -u admin:admin -X POST <a href="http://localhost:6202/system/console/jmx/com.adobe.granite:type=Repository/a/BackupDelay?">http://localhost:6202/system/console/jmx/com.adobe.granite:type=Repository/a/BackupDelay?value=0</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                <p>curl -u admin:admin -X POST <a href="http://localhost:6202/system/console/jmx/com.adobe.granite%3Atype%3DRepository/op/startBackup/java.lang.String?target=mvtest">http://localhost:6202/system/console/jmx/com.adobe.granite%3Atype%3DRepository/op/startBackup/java.lang.String?target=mvtest</a></p>
+                            </div>
+                        </div>
+                        <div class="header parbase section">
+                            <a name="main-pars_header_717671758"></a>
+                            <div class="header  ">
+                                <h5 id="UploadAssetsinDAM">
                     Upload Assets in DAM
-                </h3>
-                
-                
-            </div>
-            <!-- for Cascading Toc -->
-            
-                
-            
-        
-    
-
-</div>
-<div class="text parbase section">
-
-    <a name="main-pars_text_719503136"></a>
-    
-        
-            <div class="text"><p>curl -u admin:admin -X POST -F file=@"test.png" <a href="http://localhost:4508/content/dam/geometrixx/portraits.createasset.html">http://localhost:4508/content/dam/geometrixx/portraits.createasset.html</a></p>
-</div>
-        
-    
-    
-
-</div>
-
-</div>
+                </h5>
+                            </div>
+                            <!-- for Cascading Toc -->
+                        </div>
+                        <div class="text parbase section">
+                            <a name="main-pars_text_719503136"></a>
+                            <div class="text">
+                                <p>curl -u admin:admin -X POST -F file=@"test.png" http://localhost:4508/content/dam/geometrixx/portraits.createasset.html</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <footer class="footer">
@@ -459,7 +264,6 @@
                     <nav class="pull-left">
                         <ul>
                             <li>
-                               
                             </li>
                         </ul>
                     </nav>
@@ -469,8 +273,7 @@
     </div>
 </body>
 <!--   Core JS Files   -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../assets/js/material.min.js" type="text/javascript"></script>
 <!--  Charts Plugin -->
@@ -487,6 +290,6 @@
 <script src="../assets/js/material-dashboard.js?v=1.2.0"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="../assets/js/demo.js"></script>
-
 <script src="curl.js"></script>
+
 </html>

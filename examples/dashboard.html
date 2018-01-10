@@ -18,14 +18,14 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
-
     <style type="text/css">
-        .nav-tabs>li>a { font-size: 8px; }
+    .nav-tabs>li>a {
+        font-size: 8px;
+    }
     </style>
 </head>
 
 <body id="body">
-
     <div class="wrapper">
         <div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg">
             <!--
@@ -46,13 +46,12 @@
                             <p>Admin consoles</p>
                         </a>
                     </li>
-                     <li>
+                    <li>
                         <a href="./redmine.html">
                             <i class="material-icons">Team</i>
                             <p>Team issues</p>
                         </a>
                     </li>
-                
                     <li>
                         <a href="./monitoring.html">
                             <i class="material-icons">Instance</i>
@@ -89,51 +88,45 @@
                 </div>
             </nav>
             <div class="content">
-            <div class="container-fluid">
-          <div class="col-xs-3">
-                <a id="sectionA" href="#"><b>Dev actions</b></a></div>
-                 <div class="col-xs-3" style="border-left:1px solid #ddd;">
-                <a id="sectionB" href="#"><b>Custom links</b></a></div>
-            </div>
                 <div class="container-fluid">
-                <br><br>
+                    <div class="col-xs-3">
+                        <a id="sectionA" href="#"><b>Dev actions</b></a></div>
+                    <div class="col-xs-3" style="border-left:1px solid #ddd;">
+                        <a id="sectionB" href="#"><b>Custom links</b></a></div>
+                </div>
+                <div class="container-fluid">
+                    <br>
+                    <br>
                     <div class="row" id="blockA">
                         <div class="col-lg-5 col-md-6 col-xs-6">
-                            <div class="row isInstance" > 
-                           
-                            
-                            <div class="row" style="text-align:center;border-bottom:1px solid #ddd; padding-bottom: 5px;margin: 0 15px;">
-                            <p><b>WCMode</b></p>
+                            <div class="row isInstance">
+                                <div class="row" style="text-align:center;border-bottom:1px solid #ddd; padding-bottom: 5px;margin: 0 15px;">
+                                    <p><b>WCMode</b></p>
                                     <a href="#" class="querystring" data-querystring-key="wcmmode" data-querystring-value="disabled">Disabled (Ctrl+Shift+K)</a>
-                                    <a href="#" style="border-left:1px solid #ddd;margin-left:5px;padding-left:5px" class="querystring" data-querystring-key="wcmmode" data-querystring-value="edit">Edit (Ctrl+Shift+L)</a><br>
+                                    <a href="#" style="border-left:1px solid #ddd;margin-left:5px;padding-left:5px" class="querystring" data-querystring-key="wcmmode" data-querystring-value="edit">Edit (Ctrl+Shift+L)</a>
+                                    <br>
                                     <a href="#" style="margin-left:5px;padding-left:5px" class="querystring" data-querystring-key="wcmmode" data-querystring-value="design">Design</a>
                                     <a href="#" style="border-left:1px solid #ddd;margin-left:5px;padding-left:5px" class="querystring" data-querystring-key="wcmmode" data-querystring-value="preview">Preview</a>
-                               </div>
-                            
+                                </div>
                             </div>
-                            <div class="row isInstance" >
-                            <br>
-                            
-                        <div class="row" style="text-align:center;border-bottom:1px solid #ddd; padding-bottom: 5px;margin: 0 15px;">
-                        <p><b>Console</b><p>
-                            <a href="#" data-querystring-value="ui-crxdeLite" data-querystring-key="ui">CRXDE Lite</a>
-                       
-                            <a href="#" style="border-left:1px solid #ddd;margin-left:5px;padding-left:5px" data-querystring-value="ui-contentFinder" data-querystring-key="ui">Content Finder</a>
-                       
-                            <a href="#" style="border-left:1px solid #ddd;margin-left:5px;padding-left:5px" data-querystring-value="ui-touch" data-querystring-key="ui">Classic/Touch</a>
-                      
-                    </div>
+                            <div class="row isInstance">
+                                <br>
+                                <div class="row" style="text-align:center;border-bottom:1px solid #ddd; padding-bottom: 5px;margin: 0 15px;">
+                                    <p><b>Console</b>
+                                        <p>
+                                            <a href="#" data-querystring-value="ui-crxdeLite" data-querystring-key="ui">CRXDE Lite</a>
+                                            <a href="#" style="border-left:1px solid #ddd;margin-left:5px;padding-left:5px" data-querystring-value="ui-contentFinder" data-querystring-key="ui">Content Finder</a>
+                                            <a href="#" style="border-left:1px solid #ddd;margin-left:5px;padding-left:5px" data-querystring-value="ui-touch" data-querystring-key="ui">Classic/Touch</a>
+                                </div>
                             </div>
-                            <div class="row isInstance" >
-                            <br>
-                        <div class="row" style="text-align:center">
-                        <p><b>Toggle Debug</b></p>
-                            <a href="#" data-querystring-value="toggle-debug" data-querystring-key="debug">Debug Layout</a>
-                        
-                            <a href="#" style="border-left:1px solid #ddd;margin-left:5px;padding-left:5px" data-querystring-value="toggle-clientLibs" data-querystring-key="debug">Debug ClientLibs</a>
-                        </div>
-                   
-<br>
+                            <div class="row isInstance">
+                                <br>
+                                <div class="row" style="text-align:center">
+                                    <p><b>Toggle Debug</b></p>
+                                    <a href="#" data-querystring-value="toggle-debug" data-querystring-key="debug">Debug Layout</a>
+                                    <a href="#" style="border-left:1px solid #ddd;margin-left:5px;padding-left:5px" data-querystring-value="toggle-clientLibs" data-querystring-key="debug">Debug ClientLibs</a>
+                                </div>
+                                <br>
                             </div>
                         </div>
                         <div class="col-lg-5 col-md-6 col-xs-6">
@@ -148,73 +141,67 @@
                                     </div>
                                 </div>
                                 <div class="card-content">
-                                    <div class="tab-content" id="adminconsole_body"/>
+                                    <div class="tab-content" id="adminconsole_body" />
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    
                 </div>
                 <div class="row" id="blockB" style="display:none">
-
-                 <div class="col-lg-7 col-md-6 col-xs-6">
-                            <div class="card card-nav-tabs">
-                                <div class="card-header" data-background-color="purple"  style="padding:5px">
-                                    <div class="nav-tabs-navigation">
-                                        <div class="nav-tabs-wrapper">
-                                            <span class="nav-tabs-title"></span>
-                                            <ul class="nav nav-tabs" data-tabs="tabs" id="linklist_header">
-                                            </ul>
-                                        </div>
+                    <div class="col-lg-7 col-md-6 col-xs-6">
+                        <div class="card card-nav-tabs">
+                            <div class="card-header" data-background-color="purple" style="padding:5px">
+                                <div class="nav-tabs-navigation">
+                                    <div class="nav-tabs-wrapper">
+                                        <span class="nav-tabs-title"></span>
+                                        <ul class="nav nav-tabs" data-tabs="tabs" id="linklist_header">
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="card-content">
-                                    <div class="tab-content" id="linklist_body"/>
-                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="tab-content" id="linklist_body" />
                             </div>
                         </div>
                     </div>
-
-
-                     <div class="col-lg-12 col-md-6 col-xs-6">
-                            <div class="card card-nav-tabs">
-                                <div class="card-header" data-background-color="purple"  style="padding:5px">
-                                    <div class="nav-tabs-navigation">
-                                        <div class="nav-tabs-wrapper">
-                                            <span class="nav-tabs-title"></span>
-                                            <ul class="nav nav-tabs" data-tabs="tabs" id="customlist_header">
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-content">
-                                    <div class="tab-content" id="customlist_body"/>
+                </div>
+                <div class="col-lg-12 col-md-6 col-xs-6">
+                    <div class="card card-nav-tabs">
+                        <div class="card-header" data-background-color="purple" style="padding:5px">
+                            <div class="nav-tabs-navigation">
+                                <div class="nav-tabs-wrapper">
+                                    <span class="nav-tabs-title"></span>
+                                    <ul class="nav nav-tabs" data-tabs="tabs" id="customlist_header">
+                                    </ul>
                                 </div>
                             </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="tab-content" id="customlist_body" />
                         </div>
                     </div>
                 </div>
             </div>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="pull-left">
-                        <ul>
-                            <li>
-                                <!--a target="_blank" href="https://www.linkedin.com/in/juanfgr/">
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container-fluid">
+            <nav class="pull-left">
+                <ul>
+                    <li>
+                        <!--a target="_blank" href="https://www.linkedin.com/in/juanfgr/">
                                     Owner
                                 </a-->
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </footer>
+                    </li>
+                </ul>
+            </nav>
         </div>
+    </footer>
+    </div>
     </div>
 </body>
 <!--   Core JS Files   -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../assets/js/material.min.js" type="text/javascript"></script>
 <!--  Charts Plugin -->
@@ -231,6 +218,6 @@
 <script src="../assets/js/material-dashboard.js?v=1.2.0"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="../assets/js/demo.js"></script>
-
 <script src="dashboard.js"></script>
+
 </html>

@@ -3,7 +3,6 @@
   var url = origin.split('/')[origin.split('/').length - 1];
 
   $().ready(function() {
-
       setTimeout(function() {
           chrome.storage.sync.get(['last_page', 'last_page_flag'], function(items) {
               if (items.last_page_flag == 'false' && items.last_page && (url != items.last_page)) {
@@ -17,8 +16,8 @@
           console.log('Settings retrieved', items.json);
           data = JSON.parse(items.json);
           $.each(data.team, function(index, val) {
-              issues_me(val.url + val.tables[0].query + val.api_key);
-              issues_team(val.url + val.tables[1].query + val.api_key);
+              issues_me(val.url + val.tables[0].query + val.api_key + '&offset=0&limit=8&sort=created_on:desc');
+              issues_team(val.url + val.tables[1].query + val.api_key + '&offset=0&limit=8&sort=created_on:desc');
           });
 
       });
